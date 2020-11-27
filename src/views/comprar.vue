@@ -18,16 +18,8 @@
       </v-btn>
       
     </v-app-bar>
+    <v-img></v-img>
 
-    <v-carousel>
-      <v-carousel-item
-          v-for="(item,i) in items"
-          :key="i"
-          :src="item.src"
-          reverse-transition="fade-transition"
-          transition="fade-transition"
-      ></v-carousel-item>
-    </v-carousel>
     <v-card>
       <v-card-title class="justify-center tituloPorcentaje">
         El 85% de las personas prefiere comprar en KLS.
@@ -183,67 +175,9 @@ export default {
   name: 'Inicio',
   data() {
     return {
-      labels: ['KLS', 'Otros'],
-      datasets: [
-        {
-          data: [85, 15],
-          backgroundColor: ['#B71C1C', '#424242'],
-          hoverBackgroundColor: ['#FF5252', '#BDBDBD'],
-        }
-      ],
-      option: {
-        title: {
-          text: 'KLS',
-          display: true,
-          position: 'bottom',
-        }
-      },
-      items: [
-        {
-          src: 'https://11uk91uj5h62os2u61c0s6o1-wpengine.netdna-ssl.com/wp-content/uploads/2020/08/BANNERS-RAV4-XROAD.jpg',
-        },
-        {
-          src: 'https://11uk91uj5h62os2u61c0s6o1-wpengine.netdna-ssl.com/wp-content/uploads/2020/08/FJ-Cruiser-1Banner.jpg',
-        },
-        {
-          src: 'https://www.kia.com/co/images/showroom/NewRioSedan/Caracteristicas/rio_sedan_exterior_01_w.jpg',
-        },
-        {
-          src: 'https://www.kia.com/co/images/showroom/soluto/caracteristicas/SOLUTO-3-W--.jpg',
-        },
-      ],
-      mensaje: []
     }
   },
     methods: {
     }
 }
 </script>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-
-body {
-  font-family: 'Roboto', sans-serif;
-  overflow-x: hidden;
-}
-
-.botones_appbar{
-  border-width: 1px;
-  border-style: solid;
-  border-color: #B71C1C;
-  border-left-color:rgb(255, 255, 255);
-}
-
-.footer {
-  background-color: #B71C1C !important;
-}
-
-.tituloFooter {
-  font-family: 'Pacifico', cursive;
-  font-size: 28px !important;
-}
-
-.tituloPorcentaje {
-  font-size: 200% !important;
-}
-</style>
