@@ -24,16 +24,61 @@
     <v-img  src="https://www.toyota.com.ec/sites/default/files/galeria_fj_cruiser_3.jpg" height="300"></v-img>
     <v-card>
         <v-card-text dark class="text-center py-6 nombre">FJ CRUISER</v-card-text>
-        <v-row>
-            <v-col md=4>
-
+        <v-row class="justify-center">
+            <v-col md=3>
+                <v-card flat>
+                    <v-card-tittle>Especificaciones</v-card-tittle>
+                    <v-card-text>
+                        Dimensiones exteriores
+                        <v-divider></v-divider>
+                        <v-row>
+                            <v-col>
+                                Largo(mm)  <br>
+                                Ancho(mm)<br>
+                                Altura(mm)<br>
+                                Tanque(Gal)<br>
+                            </v-col>
+                            <v-col>
+                                4670<br>
+                                1905<br>
+                                1830<br>
+                                19<br>
+                            </v-col>
+                            
+                        </v-row>
+                        <br>
+                        Motor
+                        <v-divider></v-divider>
+                        <v-row>
+                            <v-col>
+                                Denominación  <br>
+                                Cilindraje<br>
+                                Potencia Maxima<br>
+                                Teconologia<br>
+                            </v-col>
+                            <v-col>
+                                1GR-FE<br>
+                                3956<br>
+                                1830<br>
+                                19<br>
+                            </v-col>
+                            
+                        </v-row>
+                    </v-card-text>
+                </v-card>
             </v-col>
-            <v-col md=4>
-                <v-img v-show="color='azul'" src="https://11uk91uj5h62os2u61c0s6o1-wpengine.netdna-ssl.com/wp-content/uploads/2020/08/6color_fj-azul.png"></v-img>
-                <v-img v-show="color='rojo'" src="https://11uk91uj5h62os2u61c0s6o1-wpengine.netdna-ssl.com/wp-content/uploads/2020/08/7color_fj-rojo.png"></v-img>
-                <v-img v-show="color='negro'" src="https://11uk91uj5h62os2u61c0s6o1-wpengine.netdna-ssl.com/wp-content/uploads/2020/08/5color_fj-blanco-y-negro.png"></v-img>
-                <v-img v-show="color='blanco'" src="https://11uk91uj5h62os2u61c0s6o1-wpengine.netdna-ssl.com/wp-content/uploads/2020/08/1color_fj-blanco.png"></v-img>
-            </v-col>
+            <v-col md=5 >
+                <v-img width="600" height="350" v-if="color===1" src="https://11uk91uj5h62os2u61c0s6o1-wpengine.netdna-ssl.com/wp-content/uploads/2020/08/6color_fj-azul.png"></v-img>
+                <v-img width="600" height="350" v-if="color===2" src="https://11uk91uj5h62os2u61c0s6o1-wpengine.netdna-ssl.com/wp-content/uploads/2020/08/7color_fj-rojo.png"></v-img>
+                <v-img width="600" height="350" v-if="color===3" src="https://11uk91uj5h62os2u61c0s6o1-wpengine.netdna-ssl.com/wp-content/uploads/2020/08/5color_fj-blanco-y-negro.png"></v-img>
+                <v-img width="600" height="350" v-if="color===4" src="https://11uk91uj5h62os2u61c0s6o1-wpengine.netdna-ssl.com/wp-content/uploads/2020/08/1color_fj-blanco.png"></v-img>
+                <div class="d-flex justify-center">
+                    <v-btn class="mx-2" text icon @click="color=4"><img src="https://11uk91uj5h62os2u61c0s6o1-wpengine.netdna-ssl.com/wp-content/uploads/2020/08/1.-BLANCO-1.png" ></v-btn>
+                    <v-btn class="mx-2" text icon @click="color=3"><img src="https://11uk91uj5h62os2u61c0s6o1-wpengine.netdna-ssl.com/wp-content/uploads/2020/08/5.-NEGRO.png" ></v-btn>
+                    <v-btn class="mx-2" text icon @click="color=1"><img src="https://11uk91uj5h62os2u61c0s6o1-wpengine.netdna-ssl.com/wp-content/uploads/2020/08/6.-AZUL-AHUMADO.png" ></v-btn>
+                    <v-btn class="mx-2" text icon @click="color=2"><img src="https://11uk91uj5h62os2u61c0s6o1-wpengine.netdna-ssl.com/wp-content/uploads/2020/08/7.-ROJO-1.png" ></v-btn>
+                </div>
+                </v-col>
             <v-col md=4>
 
             </v-col>
@@ -75,7 +120,7 @@ export default {
   name: 'Comprar',
   data() {
     return {
-        color:'blanco'
+        color:4,
     }
   },
   methods: {
