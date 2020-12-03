@@ -5,14 +5,14 @@
       color="red darken-4"
       dense
     >
-      <v-toolbar-title><v-card-text class="text-center tituloFooter">
+      <v-toolbar-title><v-card-text  class="text-center tituloFooter">
         <strong>KLS</strong>
       </v-card-text></v-toolbar-title>  
       <v-spacer></v-spacer>
       <v-btn tile text class="botones_appbar">
         Financiación
       </v-btn>
-      <v-btn tile text class="botones_appbar">
+      <v-btn @click="comprar" tile text class="botones_appbar">
         <v-icon left>mdi-cart</v-icon>
         Comprar Online
       </v-btn>
@@ -28,6 +28,7 @@
           transition="fade-transition"
       ></v-carousel-item>
     </v-carousel>
+
     <v-card>
       <v-card-title class="justify-center tituloPorcentaje">
         El 85% de las personas prefiere comprar en KLS.
@@ -35,6 +36,7 @@
       <chartjs-doughnut height="100px" :labels="labels" :datasets="datasets" :option="option"></chartjs-doughnut>
 
     </v-card>
+
     <v-card elevation="20">
       <v-tabs
           background-color="grey darken-3"
@@ -106,20 +108,20 @@
         <v-card flat>
           <v-row justify="space-around">
             <v-col md="auto">
-              <v-img src="https://jacmotors.com.co/wp-content/uploads/2018/11/camion-jac-liviano-jhr-power.jpg" height="150px" width="250px"></v-img>
-              <v-card-text class="text-center font-weight-bold">JAC-JHR Power+</v-card-text>
+              <v-img src="https://foton.com.co/dealers.rewebmkt.com/images/x20200309024805-mini-icone.png.pagespeed.ic.2h4A2-NEDD.webp" height="150px" width="250px"></v-img>
+              <v-card-text class="text-center font-weight-bold">FOTON-FPR CUMMINS 5.0 TON.</v-card-text>
             </v-col>
             <v-col md="auto">
-              <v-img src="https://jacmotors.com.co/wp-content/uploads/2018/11/camion-jac-liviano-jkr-medio-power.jpg" height="150px" width="250px"></v-img>
-              <v-card-text class="text-center font-weight-bold">JAC-JKR Medio Power+</v-card-text>
+              <v-img src="https://foton.com.co/dealers.rewebmkt.com/images/x20200619074903-mini-nova.png.pagespeed.ic.91AVd7_8ad.webp" height="150px" width="250px"></v-img>
+              <v-card-text class="text-center font-weight-bold">FOTON-FKR CUMMINS 3.5 TON</v-card-text>
             </v-col>
             <v-col md="auto">
-              <v-img src="https://jacmotors.com.co/wp-content/uploads/2018/11/camion-jac-liviano-jkrd-doble-cabina-power.jpg" height="150px" width="250px"></v-img>
-              <v-card-text class="text-center font-weight-bold">JAC-JKRD Doble Cabin Power</v-card-text>
+              <v-img src="https://foton.com.co/dealers.rewebmkt.com/images/x20200309024036-mini-icone.png.pagespeed.ic.wyQYkfIH1m.webp" height="150px" width="250px"></v-img>
+              <v-card-text class="text-center font-weight-bold">FOTON-FRR PLUS CUMMINS 6.5 TON.</v-card-text>
             </v-col>
             <v-col md="auto">
-              <v-img  src="https://jacmotors.com.co/wp-content/uploads/2018/11/camion-jac-mediano-jpr-max-power.jpg" height="150px" width="250px"></v-img>
-              <v-card-text class="text-center font-weight-bold">JAC-JPR Maxx Power</v-card-text>
+              <v-img  src="https://foton.com.co/dealers.rewebmkt.com/images/x20200309024549-mini-icone.png.pagespeed.ic.NczlOABJcz.webp" height="150px" width="250px"></v-img>
+              <v-card-text class="text-center font-weight-bold">FOTON FTR-PLUS CUMMINS 11 TON.</v-card-text>
             </v-col>
           </v-row>  
         </v-card>
@@ -128,26 +130,27 @@
         <v-card flat>
           <v-row justify="space-around">
             <v-col md="auto">
-              <v-img src="https://www.bmw-motorrad.co/content/dam/bmwmotorradnsc/common/images/common/mainnavigation/72dpi/2020/nsc-master-mainnavigation-rninet_pure_P0N3E_300x180.jpg.asset.1602601591023.jpg" height="150px" width="250px"></v-img>
-              <v-card-text class="text-center font-weight-bold">BMW-R NineT Pure</v-card-text>
+              <v-img src="https://a5i4f6g5.stackpathcdn.com/images/cms/Lateral-Gris.png" height="150px" width="250px"></v-img>
+              <v-card-text class="text-center font-weight-bold">HONDA-CB 250 TWISTER Modelo 2021</v-card-text>
             </v-col>
             <v-col md="auto">
-              <v-img src="https://www.bmw-motorrad.co/content/dam/bmwmotorradnsc/common/images/common/mainnavigation/72dpi/2019/nsc-master-mainnavigation-f900r-P0N3A_300x180.jpg.asset.1573052545701.jpg" height="150px" width="250px"></v-img>
-              <v-card-text class="text-center font-weight-bold">BMW-S1000 R</v-card-text>
+              <v-img src="https://a5i4f6g5.stackpathcdn.com/images/cms/Negro-ced2c.png" height="150px" width="250px"></v-img>
+              <v-card-text class="text-center font-weight-bold">HONDA-CB 500F Modelo 2018</v-card-text>
             </v-col>
             <v-col md="auto">
-              <v-img src="https://www.bmw-motorrad.co/content/dam/bmwmotorradnsc/common/images/common/mainnavigation/72dpi/2020/nsc-master-mainnavigation-g310gs-P0N3D_300x180.jpg.asset.1599641897209.jpg" height="150px" width="250px"></v-img>
-              <v-card-text class="text-center font-weight-bold">BMW-G 310 GS</v-card-text>
+              <v-img src="https://a5i4f6g5.stackpathcdn.com/images/cms/Azul-b8694.png" height="150px" width="250px"></v-img>
+              <v-card-text class="text-center font-weight-bold">HONDA-CB 650R Modelo 2019</v-card-text>
             </v-col>
             <v-col md="auto">
-              <v-img  src="https://www.bmw-motorrad.co/content/dam/bmwmotorradnsc/common/images/common/mainnavigation/72dpi/rework/nsc-master-mainnavigation-R18PURE-POND2_300x180.jpg.asset.1585942267505.jpg" height="150px" width="250px"></v-img>
-              <v-card-text class="text-center font-weight-bold">BMW-R18</v-card-text>
+              <v-img  src="https://a5i4f6g5.stackpathcdn.com/images/cms/Gris-2355c.png" height="150px" width="250px"></v-img>
+              <v-card-text class="text-center font-weight-bold">HONDA-CB 1000R Modelo 2020</v-card-text>
             </v-col>
           </v-row>  
         </v-card>
       </v-tab-item>
       </v-tabs>
     </v-card>
+
     <v-footer class="footer">
       <v-card-text class="text-center">
         <v-btn
@@ -216,6 +219,10 @@ export default {
     }
   },
     methods: {
+      comprar(){
+        this.$router.push({name:'Comprar'})
+      },
+      
     }
 }
 </script>
