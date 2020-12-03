@@ -1,26 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar
-      absolute
-      color="red darken-4"
-      dense
-    > <v-btn text>
-      <v-toolbar-title @click="inicio"><v-card-text class="text-center tituloFooter">
-        
-          <strong>KLS</strong>
-        
-        
-      </v-card-text></v-toolbar-title> </v-btn> 
-      <v-spacer></v-spacer>
-      <v-btn tile text class="botones_appbar">
-        Financiación
-      </v-btn>
-      <v-btn tile text class="botones_appbar">
-        <v-icon left>mdi-cart</v-icon>
-        Comprar Online
-      </v-btn>
-      
-    </v-app-bar>
+    <Appbar/>
     <v-img class="mt-6" src="https://11uk91uj5h62os2u61c0s6o1-wpengine.netdna-ssl.com/wp-content/uploads/2020/08/Corolla-Home.jpg"></v-img>
 
     <v-card elevation="20" tile>
@@ -38,8 +18,8 @@
             <v-card-text class="text-center font-weight-bold">CHEVROLET-Spark GT</v-card-text>
           </v-card>
         </v-col>
-        <v-col  md="auto" @click="TOYOTA_prado">
-          <v-card flat>
+        <v-col  md="auto" >
+          <v-card flat @click="TOYOTA_prado">
             <v-img src="https://11uk91uj5h62os2u61c0s6o1-wpengine.netdna-ssl.com/wp-content/uploads/2020/08/prado3.jpg" height="200" width="300"></v-img>
             <v-card-text class="text-center font-weight-bold">TOYOTA-PRADO</v-card-text>
           </v-card>
@@ -57,40 +37,20 @@
         </v-card>
       </v-row>
     </v-card>
-    
-    <v-footer class="footer">
-      <v-card-text class="text-center">
-        <v-btn
-            class="mx-4"
-            icon>
-          <v-icon size="24px" color="black"> mdi-facebook</v-icon>
-        </v-btn>
-        <v-btn
-            class="mx-4"
-            icon>
-          <v-icon size="24px" dark color="black"> mdi-instagram</v-icon>
-        </v-btn>
 
-      </v-card-text>
-      <v-card-text class="text-center">
-        <v-rating
-            background-color=""
-            color="white"
-            size="30"
-        ></v-rating>
-      </v-card-text>
-      <v-card-text class="text-center tituloFooter">
-        <strong>KLS</strong>
-      </v-card-text>
-    </v-footer>
+    <Footer/>
   </v-app>
 </template>
 
 <script>
 
-
+import Appbar from "@/components/Appbar.vue";
+import Footer from "@/components/Footer.vue";
 export default {
   name: 'Comprar',
+  components:{
+    Appbar,Footer
+  },
   data() {
     return {
     }

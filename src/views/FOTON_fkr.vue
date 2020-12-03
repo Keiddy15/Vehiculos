@@ -1,69 +1,129 @@
 <template>
   <v-app>
-    <v-app-bar
-      absolute
-      color="red darken-4"
-      dense
-    > <v-btn text>
-      <v-toolbar-title @click="inicio"><v-card-text class="text-center tituloFooter">
-        
-          <strong>KLS</strong>
-        
-        
-      </v-card-text></v-toolbar-title> </v-btn> 
-      <v-spacer></v-spacer>
-      <v-btn tile text class="botones_appbar">
-        Financiación
-      </v-btn>
-      <v-btn tile text class="botones_appbar">
-        <v-icon left>mdi-cart</v-icon>
-        Comprar Online
-      </v-btn>
-      
-    </v-app-bar>
+    <Appbar/>
+    <v-img src="https://www.revistaturbo.com/sites/default/files/camionefoton.jpg" height="500"></v-img>
+    <v-card>
+        <v-card-text dark class="text-center py-6 nombre">FOTON-FKR CUMMINS 3.5 TON.</v-card-text>
+        <v-row class="justify-center">
+            <v-col md=3>
+                <v-card flat>
+                    <v-card-tittle class="ml-4 especificaciones">ESPECIFICACIONES</v-card-tittle>
+                    <v-card-text>
+                        DIMENSIONES EXTERIORES
+                        <v-divider></v-divider>
+                        <v-row>
+                            <v-col>
+                                Capacidad de carga(kg)<br>
+                                Dirección<br>
+                                Peso bruto vehicular (Kg)<br>
+                                Peso en vacío(Kg)<br>
+                            </v-col>
+                            <v-col>
+                                3500<br>
+                                Asistida Hidráulicamente<br>
+                                5925<br>
+                                2425  <br>
+                            </v-col>
+                            
+                        </v-row>
+                        <br>
+                        MOTOR
+                        <v-divider></v-divider>
+                        <v-row>
+                            <v-col>
+                                Denominación  <br>
+                                Cilindraje(cc)<br>
+                                Potencia Maxima(rpm)<br>
+                                Teconologia<br>
+                            </v-col>
+                            <v-col>
+                                ISF2.8s4148V <br>
+                                2776<br>
+                                3,200<br>
+                                ABS<br>
+                            </v-col>
+                            
+                        </v-row>
+                    </v-card-text>
+                </v-card>
+            </v-col>
+            <v-col md=5 >
+                <v-img width="600" height="350" v-if="color===4" src="https://foton.com.co/dealers.rewebmkt.com/images/x20201106055813-6.png.pagespeed.ic.W9kaiXUSpT.webp"></v-img>
+            </v-col>
+            <v-col md=4>
+              <v-card class="pt-3 mr-3">
+                <v-card >
+                    <v-card-tittle class="ml-4 especificaciones">PRECIO: </v-card-tittle>
+                    <v-card-text>
+                        <v-card-text class="pa-0 mb-6"><strong >$78.990.000</strong></v-card-text> 
+                        TRANSMISION
+                        <v-divider></v-divider>
+                        <v-row>
+                            <v-col>
+                                Descripcion  <br>
+                            </v-col>
+                            <v-col>
+                                4x2<br>
+                            </v-col>
+                            
+                        </v-row>
+                        <br>
+                        TIPO
+                        <v-divider></v-divider>
+                        <v-row>
+                            <v-col>
+                                Tipo  <br>
+                            </v-col>
+                            <v-col>
+                                Camion<br>
+                            </v-col>
+                            
+                        </v-row>
+                    </v-card-text>
+                </v-card>
+                
+              </v-card >
+              <v-card class="mr-3 mt-6"  flat><v-btn color="red darken-4" class="mt-4" block>COMPRAR</v-btn></v-card>
+            </v-col>
+        </v-row>
+    </v-card>
     
-    <v-footer class="footer">
-      <v-card-text class="text-center">
-        <v-btn
-            class="mx-4"
-            icon>
-          <v-icon size="24px" color="black"> mdi-facebook</v-icon>
-        </v-btn>
-        <v-btn
-            class="mx-4"
-            icon>
-          <v-icon size="24px" dark color="black"> mdi-instagram</v-icon>
-        </v-btn>
-
-      </v-card-text>
-      <v-card-text class="text-center">
-        <v-rating
-            background-color=""
-            color="white"
-            size="30"
-        ></v-rating>
-      </v-card-text>
-      <v-card-text class="text-center tituloFooter">
-        <strong>KLS</strong>
-      </v-card-text>
-    </v-footer>
+    <Footer/>
   </v-app>
 </template>
 
 <script>
 
-
+import Appbar from "@/components/Appbar.vue";
+import Footer from "@/components/Footer.vue";
 export default {
   name: 'Comprar',
+  components:{
+    Appbar,Footer
+  },
   data() {
     return {
+        color:4,
     }
   },
   methods: {
-    inicio(){
-      this.$router.push({name:'Inicio'})
-    },
+    
     
   }
 }
 </script>
+
+<style scoped>
+@import url('https://fonts.googleapis.com/css2? family = Titillium + Web: wght @ 700 & display = swap'); 
+    .nombre{
+        font-family: 'Titillium Web', sans-serif;
+        font-weight: bolder;
+        background-color: #202020;
+        color:#FFFFFF !important;
+        font-size: 40px;
+    }
+    .especificaciones{
+        font-family: 'Titillium Web', sans-serif;
+        font-weight: bolder;
+    }
+</style>

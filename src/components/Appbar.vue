@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  
     <v-app-bar
       absolute
       color="red darken-4"
@@ -22,7 +22,7 @@
       
     </v-app-bar>
     
-  </v-app>
+  
 </template>
 
 <script>
