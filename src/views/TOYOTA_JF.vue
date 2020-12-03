@@ -27,9 +27,9 @@
         <v-row class="justify-center">
             <v-col md=3>
                 <v-card flat>
-                    <v-card-tittle>Especificaciones</v-card-tittle>
+                    <v-card-tittle class="ml-4 especificaciones">ESPECIFICACIONES</v-card-tittle>
                     <v-card-text>
-                        Dimensiones exteriores
+                        DIMENSIONES EXTERIORES
                         <v-divider></v-divider>
                         <v-row>
                             <v-col>
@@ -47,7 +47,7 @@
                             
                         </v-row>
                         <br>
-                        Motor
+                        MOTOR
                         <v-divider></v-divider>
                         <v-row>
                             <v-col>
@@ -140,5 +140,9 @@ export default {
         background-color: #202020;
         color:#FFFFFF !important;
         font-size: 40px;
+    }
+    .especificaciones{
+        font-family: 'Titillium Web', sans-serif;
+        font-weight: bolder;
     }
 </style>

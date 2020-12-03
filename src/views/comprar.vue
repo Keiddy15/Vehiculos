@@ -21,7 +21,7 @@
       </v-btn>
       
     </v-app-bar>
-    <v-img src="https://11uk91uj5h62os2u61c0s6o1-wpengine.netdna-ssl.com/wp-content/uploads/2020/08/Corolla-Home.jpg"></v-img>
+    <v-img class="mt-6" src="https://11uk91uj5h62os2u61c0s6o1-wpengine.netdna-ssl.com/wp-content/uploads/2020/08/Corolla-Home.jpg"></v-img>
 
     <v-card elevation="20" tile>
       <v-card-text class="text-center py-5  titulo">Tus sueños los tomamos como nuestros, Cual es tu preferido?</v-card-text>
@@ -57,6 +57,7 @@
         </v-card>
       </v-row>
     </v-card>
+    
     <v-footer class="footer">
       <v-card-text class="text-center">
         <v-btn

@@ -1,23 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar
-      absolute
-      color="red darken-4"
-      dense
-    >
-      <v-toolbar-title><v-card-text  class="text-center tituloFooter">
-        <strong>KLS</strong>
-      </v-card-text></v-toolbar-title>  
-      <v-spacer></v-spacer>
-      <v-btn tile text class="botones_appbar">
-        Financiación
-      </v-btn>
-      <v-btn @click="comprar" tile text class="botones_appbar">
-        <v-icon left>mdi-cart</v-icon>
-        Comprar Online
-      </v-btn>
-      
-    </v-app-bar>
+    <Appbar/>
 
     <v-carousel>
       <v-carousel-item
@@ -181,9 +164,12 @@
 
 <script>
 
-
+import Appbar from "@/components/Appbar.vue";
 export default {
   name: 'Inicio',
+  components:{
+    Appbar
+  },
   data() {
     return {
       labels: ['KLS', 'Otros'],
@@ -219,9 +205,7 @@ export default {
     }
   },
     methods: {
-      comprar(){
-        this.$router.push({name:'Comprar'})
-      },
+      
       
     }
 }
