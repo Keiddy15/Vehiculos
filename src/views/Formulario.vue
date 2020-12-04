@@ -150,7 +150,7 @@ export default {
         celular: this.celular, direccion: this.direccion, email: this.email
       })
       this.insertar_cliente()
-      this.$router.push({name: 'Inicio'});
+      this.$router.push({name: 'Factura'});
     },
     insertar_cliente() {
       const path = 'http://localhost:5000/cliente';

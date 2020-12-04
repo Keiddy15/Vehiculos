@@ -83,7 +83,7 @@
                 </v-card>
                 
               </v-card >
-              <v-card class="mr-3 mt-6"  flat><v-btn color="red darken-4" class="mt-4" block>COMPRAR</v-btn></v-card>
+              <v-card class="mr-3 mt-6"  flat><v-btn color="red darken-4" class="mt-4" block @click="comprar">COMPRAR</v-btn></v-card>
             </v-col>
         </v-row>
     </v-card>
@@ -96,6 +96,7 @@
 
 import Appbar from "@/components/Appbar.vue";
 import Footer from "@/components/Footer.vue";
+import axios from "axios";
 export default {
   name: 'Comprar',
   components:{
@@ -103,12 +104,39 @@ export default {
   },
   data() {
     return {
-        color:4,
+      color:4,
+      info_carro: [],
+      marca: 'FOTN',
+      nombre: 'fkr',
+      modelo: '2015',
+      matricula: 'K2L2',
+      tipo: 'Camión',
+      disponibilidad: 'Sí',
+      valor_vehiculo:78990000,
+      capacidad_carga: 3500,
+      traccion: 'ISF2.8s4148V'
     }
   },
   methods: {
-    
-    
+    comprar(){
+      this.info_carro.push({
+        marca: this.marca, nombre: this.nombre,  modelo: this.modelo,
+        matricula: this.matricula, tipo: this.tipo, disponibilidad: this.disponibilidad,
+        valor_vehiculo: this.valor_vehiculo, color: this.color, capacidad_carga: this.capacidad_carga, traccion: this.traccion
+      })
+      this.insertar_carro()
+      this.$router.push({name: 'Formulario'});
+    },
+    insertar_carro() {
+      const path = 'http://localhost:5000/camion';
+      axios.post(path, this.info_carro).then((result) => {
+        console.log('uwu', result)
+      })
+          .catch((error) => {
+            console.log(error);
+          });
+    }
+
   }
 }
 </script>

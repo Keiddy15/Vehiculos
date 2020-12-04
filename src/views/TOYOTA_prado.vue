@@ -92,7 +92,7 @@
                 </v-card>
                 
               </v-card >
-              <v-card class="mr-3 mt-6"  flat><v-btn color="red darken-4" class="mt-4" block>COMPRAR</v-btn></v-card>
+              <v-card class="mr-3 mt-6"  flat><v-btn color="red darken-4" class="mt-4" block @click="comprar">COMPRAR</v-btn></v-card>
             </v-col>
         </v-row>
     </v-card>
@@ -105,6 +105,7 @@
 
 import Appbar from "@/components/Appbar.vue";
 import Footer from "@/components/Footer.vue";
+import axios from "axios";
 export default {
   name: 'Comprar',
   components:{
@@ -112,12 +113,37 @@ export default {
   },
   data() {
     return {
-        color:4,
+      color:4,
+      info_carro: [],
+      marca: 'Toyota',
+      nombre: 'Pradp',
+      modelo: '2020',
+      matricula: 'Klt5',
+      tipo: 'Camioneta',
+      disponibilidad: 'Sí',
+      valor_vehiculo:228600000
     }
   },
   methods: {
-    
-    
+    comprar(){
+      this.info_carro.push({
+        marca: this.marca, nombre: this.nombre,  modelo: this.modelo,
+        matricula: this.matricula, tipo: this.tipo, disponibilidad: this.disponibilidad,
+        valor_vehiculo: this.valor_vehiculo, color: this.color
+      })
+      this.insertar_carro()
+      this.$router.push({name: 'Formulario'});
+    },
+    insertar_carro() {
+      const path = 'http://localhost:5000/camioneta';
+      axios.post(path, this.info_carro).then((result) => {
+        console.log('uwu', result)
+      })
+          .catch((error) => {
+            console.log(error);
+          });
+    }
+
   }
 }
 </script>

@@ -8,6 +8,7 @@ import CHEVR_spark from "@/views/CHEVR_spark";
 import FOTON_fkr from "@/views/FOTON_fkr";
 import HONDA_cb from "@/views/HONDA_cb";
 import Formulario from "@/views/Formulario";
+import Factura from "@/views/Factura";
 Vue.use(VueRouter)
 
 const routes = [
@@ -55,9 +56,14 @@ const routes = [
     components: {main: HONDA_cb}
   },
   {
-    path: '/Formalurio',
+    path: '/Formulario',
     name: 'Formulario',
     components: {main: Formulario}
+  },
+  {
+    path: '/Factura',
+    name: 'Factura',
+    components: {main: Factura}
   }
 ]
 

@@ -90,7 +90,7 @@
                 </v-card>
                 
               </v-card >
-              <v-card class="mr-3 mt-6"  flat><v-btn color="red darken-4" class="mt-4" block>COMPRAR</v-btn></v-card>
+              <v-card class="mr-3 mt-6"  flat><v-btn color="red darken-4" class="mt-4" block @click="comprar">COMPRAR</v-btn></v-card>
             </v-col>
         </v-row>
     </v-card>
@@ -103,6 +103,7 @@
 
 import Appbar from "@/components/Appbar.vue";
 import Footer from "@/components/Footer.vue";
+import axios from "axios";
 export default {
   name: 'Comprar',
   components:{
@@ -110,12 +111,40 @@ export default {
   },
   data() {
     return {
-        color:4,
+      color:4,
+      info_carro: [],
+      marca: 'HONDA-CB',
+      nombre: '1000 R',
+      modelo: '2020',
+      matricula: 'Klt5',
+      tipo: 'moto',
+      disponibilidad: 'Sí',
+      valor_vehiculo:180800000,
+      cilindraje: '998 cc',
+      posicion_conduccion: 'dos puesto'
     }
   },
   methods: {
-    
-    
+    comprar(){
+      this.info_carro.push({
+        marca: this.marca, nombre: this.nombre,  modelo: this.modelo,
+        matricula: this.matricula, tipo: this.tipo, disponibilidad: this.disponibilidad,
+        valor_vehiculo: this.valor_vehiculo, color: this.color, cilindraje: this.cilindraje,
+        posicion_conduccion: this.posicion_conduccion
+      })
+      this.insertar_carro()
+      this.$router.push({name: 'Formulario'});
+    },
+    insertar_carro() {
+      const path = 'http://localhost:5000/moto';
+      axios.post(path, this.info_carro).then((result) => {
+        console.log('uwu', result)
+      })
+          .catch((error) => {
+            console.log(error);
+          });
+    }
+
   }
 }
 </script>
