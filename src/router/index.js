@@ -7,6 +7,7 @@ import TOYOTA_prado from "@/views/TOYOTA_prado";
 import CHEVR_spark from "@/views/CHEVR_spark";
 import FOTON_fkr from "@/views/FOTON_fkr";
 import HONDA_cb from "@/views/HONDA_cb";
+import Formulario from "@/views/Formulario";
 Vue.use(VueRouter)
 
 const routes = [
@@ -53,6 +54,11 @@ const routes = [
     name: 'HONDA_cb',
     components: {main: HONDA_cb}
   },
+  {
+    path: '/Formalurio',
+    name: 'Formulario',
+    components: {main: Formulario}
+  }
 ]
 
 const router = new VueRouter({
